@@ -1,0 +1,3925 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "host_type": "router",
+      "subnet": "CORE",
+      "ip": "10.0.0.1",
+      "vulnerability_score": 0.135,
+      "detection_probability": 0.259,
+      "discovery_reward": 20,
+      "open_ports": [
+        22,
+        1433,
+        3389
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 1,
+      "host_type": "router",
+      "subnet": "CORE",
+      "ip": "10.0.0.2",
+      "vulnerability_score": 0.189,
+      "detection_probability": 0.129,
+      "discovery_reward": 20,
+      "open_ports": [
+        1433,
+        8080
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 2,
+      "host_type": "router",
+      "subnet": "CORE",
+      "ip": "10.0.0.3",
+      "vulnerability_score": 0.15,
+      "detection_probability": 0.161,
+      "discovery_reward": 20,
+      "open_ports": [
+        80,
+        443,
+        3389
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 3,
+      "host_type": "firewall",
+      "subnet": "DMZ",
+      "ip": "192.168.10.1",
+      "vulnerability_score": 0.051,
+      "detection_probability": 0.509,
+      "discovery_reward": 30,
+      "open_ports": [
+        22
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 4,
+      "host_type": "router",
+      "subnet": "DMZ",
+      "ip": "192.168.10.2",
+      "vulnerability_score": 0.051,
+      "detection_probability": 0.17,
+      "discovery_reward": 20,
+      "open_ports": [
+        22
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 5,
+      "host_type": "web_server",
+      "subnet": "DMZ",
+      "ip": "192.168.10.3",
+      "vulnerability_score": 0.475,
+      "detection_probability": 0.185,
+      "discovery_reward": 50,
+      "open_ports": [
+        80,
+        3306
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 6,
+      "host_type": "web_server",
+      "subnet": "DMZ",
+      "ip": "192.168.10.4",
+      "vulnerability_score": 0.798,
+      "detection_probability": 0.159,
+      "discovery_reward": 50,
+      "open_ports": [
+        1433
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 7,
+      "host_type": "web_server",
+      "subnet": "DMZ",
+      "ip": "192.168.10.5",
+      "vulnerability_score": 0.537,
+      "detection_probability": 0.206,
+      "discovery_reward": 50,
+      "open_ports": [
+        22,
+        443,
+        445,
+        3389
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 8,
+      "host_type": "firewall",
+      "subnet": "DMZ",
+      "ip": "192.168.10.6",
+      "vulnerability_score": 0.038,
+      "detection_probability": 0.682,
+      "discovery_reward": 30,
+      "open_ports": [
+        80,
+        443,
+        3306
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 9,
+      "host_type": "web_server",
+      "subnet": "DMZ",
+      "ip": "192.168.10.7",
+      "vulnerability_score": 0.508,
+      "detection_probability": 0.16,
+      "discovery_reward": 50,
+      "open_ports": [
+        80,
+        443,
+        1433
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 10,
+      "host_type": "router",
+      "subnet": "DMZ",
+      "ip": "192.168.10.8",
+      "vulnerability_score": 0.132,
+      "detection_probability": 0.175,
+      "discovery_reward": 20,
+      "open_ports": [
+        80,
+        445,
+        1433,
+        8080
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 11,
+      "host_type": "router",
+      "subnet": "DMZ",
+      "ip": "192.168.10.9",
+      "vulnerability_score": 0.126,
+      "detection_probability": 0.237,
+      "discovery_reward": 20,
+      "open_ports": [
+        443,
+        445,
+        8080
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 12,
+      "host_type": "router",
+      "subnet": "DMZ",
+      "ip": "192.168.10.10",
+      "vulnerability_score": 0.194,
+      "detection_probability": 0.192,
+      "discovery_reward": 20,
+      "open_ports": [
+        3389
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 13,
+      "host_type": "web_server",
+      "subnet": "DMZ",
+      "ip": "192.168.10.11",
+      "vulnerability_score": 0.608,
+      "detection_probability": 0.191,
+      "discovery_reward": 50,
+      "open_ports": [
+        80,
+        3306
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 14,
+      "host_type": "firewall",
+      "subnet": "DMZ",
+      "ip": "192.168.10.12",
+      "vulnerability_score": 0.091,
+      "detection_probability": 0.839,
+      "discovery_reward": 30,
+      "open_ports": [
+        3389
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 15,
+      "host_type": "router",
+      "subnet": "DMZ",
+      "ip": "192.168.10.13",
+      "vulnerability_score": 0.151,
+      "detection_probability": 0.193,
+      "discovery_reward": 20,
+      "open_ports": [
+        22,
+        443,
+        3389,
+        8080
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 16,
+      "host_type": "web_server",
+      "subnet": "DMZ",
+      "ip": "192.168.10.14",
+      "vulnerability_score": 0.467,
+      "detection_probability": 0.129,
+      "discovery_reward": 50,
+      "open_ports": [
+        443,
+        3306,
+        8080
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 17,
+      "host_type": "web_server",
+      "subnet": "DMZ",
+      "ip": "192.168.10.15",
+      "vulnerability_score": 0.67,
+      "detection_probability": 0.302,
+      "discovery_reward": 50,
+      "open_ports": [
+        445
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 18,
+      "host_type": "web_server",
+      "subnet": "DMZ",
+      "ip": "192.168.10.16",
+      "vulnerability_score": 0.581,
+      "detection_probability": 0.39,
+      "discovery_reward": 50,
+      "open_ports": [
+        445,
+        3306
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 19,
+      "host_type": "web_server",
+      "subnet": "DMZ",
+      "ip": "192.168.10.17",
+      "vulnerability_score": 0.45,
+      "detection_probability": 0.193,
+      "discovery_reward": 50,
+      "open_ports": [
+        8080
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 20,
+      "host_type": "firewall",
+      "subnet": "DMZ",
+      "ip": "192.168.10.18",
+      "vulnerability_score": 0.028,
+      "detection_probability": 0.434,
+      "discovery_reward": 30,
+      "open_ports": [
+        80,
+        1433
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 21,
+      "host_type": "web_server",
+      "subnet": "DMZ",
+      "ip": "192.168.10.19",
+      "vulnerability_score": 0.402,
+      "detection_probability": 0.242,
+      "discovery_reward": 50,
+      "open_ports": [
+        22,
+        443,
+        3389,
+        8080
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 22,
+      "host_type": "router",
+      "subnet": "DMZ",
+      "ip": "192.168.10.20",
+      "vulnerability_score": 0.197,
+      "detection_probability": 0.264,
+      "discovery_reward": 20,
+      "open_ports": [
+        3306,
+        3389,
+        8080
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 23,
+      "host_type": "web_server",
+      "subnet": "DMZ",
+      "ip": "192.168.10.21",
+      "vulnerability_score": 0.516,
+      "detection_probability": 0.291,
+      "discovery_reward": 50,
+      "open_ports": [
+        443,
+        3389
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 24,
+      "host_type": "firewall",
+      "subnet": "DMZ",
+      "ip": "192.168.10.22",
+      "vulnerability_score": 0.032,
+      "detection_probability": 0.656,
+      "discovery_reward": 30,
+      "open_ports": [
+        445,
+        8080
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 25,
+      "host_type": "router",
+      "subnet": "DMZ",
+      "ip": "192.168.10.23",
+      "vulnerability_score": 0.15,
+      "detection_probability": 0.292,
+      "discovery_reward": 20,
+      "open_ports": [
+        443,
+        445,
+        3306,
+        8080
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 26,
+      "host_type": "firewall",
+      "subnet": "DMZ",
+      "ip": "192.168.10.24",
+      "vulnerability_score": 0.082,
+      "detection_probability": 0.632,
+      "discovery_reward": 30,
+      "open_ports": [
+        22,
+        443,
+        445,
+        8080
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 27,
+      "host_type": "firewall",
+      "subnet": "DMZ",
+      "ip": "192.168.10.25",
+      "vulnerability_score": 0.045,
+      "detection_probability": 0.69,
+      "discovery_reward": 30,
+      "open_ports": [
+        8080
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 28,
+      "host_type": "router",
+      "subnet": "DMZ",
+      "ip": "192.168.10.26",
+      "vulnerability_score": 0.194,
+      "detection_probability": 0.194,
+      "discovery_reward": 20,
+      "open_ports": [
+        22,
+        80,
+        443,
+        1433
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 29,
+      "host_type": "firewall",
+      "subnet": "DMZ",
+      "ip": "192.168.10.27",
+      "vulnerability_score": 0.029,
+      "detection_probability": 0.851,
+      "discovery_reward": 30,
+      "open_ports": [
+        80,
+        3306,
+        3389,
+        8080
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 30,
+      "host_type": "firewall",
+      "subnet": "DMZ",
+      "ip": "192.168.10.28",
+      "vulnerability_score": 0.075,
+      "detection_probability": 0.57,
+      "discovery_reward": 30,
+      "open_ports": [
+        1433,
+        3389
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 31,
+      "host_type": "router",
+      "subnet": "DMZ",
+      "ip": "192.168.10.29",
+      "vulnerability_score": 0.189,
+      "detection_probability": 0.114,
+      "discovery_reward": 20,
+      "open_ports": [
+        80,
+        445,
+        1433,
+        3389
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 32,
+      "host_type": "firewall",
+      "subnet": "DMZ",
+      "ip": "192.168.10.30",
+      "vulnerability_score": 0.093,
+      "detection_probability": 0.788,
+      "discovery_reward": 30,
+      "open_ports": [
+        443,
+        3306,
+        8080
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 33,
+      "host_type": "firewall",
+      "subnet": "DMZ",
+      "ip": "192.168.10.31",
+      "vulnerability_score": 0.041,
+      "detection_probability": 0.709,
+      "discovery_reward": 30,
+      "open_ports": [
+        22,
+        80,
+        3389,
+        8080
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 34,
+      "host_type": "firewall",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.1",
+      "vulnerability_score": 0.012,
+      "detection_probability": 0.88,
+      "discovery_reward": 30,
+      "open_ports": [
+        445
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 35,
+      "host_type": "router",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.2",
+      "vulnerability_score": 0.184,
+      "detection_probability": 0.172,
+      "discovery_reward": 20,
+      "open_ports": [
+        80,
+        443,
+        1433,
+        8080
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 36,
+      "host_type": "router",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.3",
+      "vulnerability_score": 0.175,
+      "detection_probability": 0.214,
+      "discovery_reward": 20,
+      "open_ports": [
+        443,
+        1433,
+        3306,
+        8080
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 37,
+      "host_type": "workstation",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.4",
+      "vulnerability_score": 0.276,
+      "detection_probability": 0.144,
+      "discovery_reward": 10,
+      "open_ports": [
+        80
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 38,
+      "host_type": "firewall",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.5",
+      "vulnerability_score": 0.019,
+      "detection_probability": 0.649,
+      "discovery_reward": 30,
+      "open_ports": [
+        3306
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 39,
+      "host_type": "router",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.6",
+      "vulnerability_score": 0.173,
+      "detection_probability": 0.158,
+      "discovery_reward": 20,
+      "open_ports": [
+        443,
+        3306,
+        3389
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 40,
+      "host_type": "router",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.7",
+      "vulnerability_score": 0.195,
+      "detection_probability": 0.115,
+      "discovery_reward": 20,
+      "open_ports": [
+        445,
+        1433
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 41,
+      "host_type": "workstation",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.8",
+      "vulnerability_score": 0.318,
+      "detection_probability": 0.184,
+      "discovery_reward": 10,
+      "open_ports": [
+        22,
+        1433,
+        3306,
+        3389
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 42,
+      "host_type": "iot_device",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.9",
+      "vulnerability_score": 0.691,
+      "detection_probability": 0.04,
+      "discovery_reward": 5,
+      "open_ports": [
+        443
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 43,
+      "host_type": "firewall",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.10",
+      "vulnerability_score": 0.093,
+      "detection_probability": 0.732,
+      "discovery_reward": 30,
+      "open_ports": [
+        445
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 44,
+      "host_type": "workstation",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.11",
+      "vulnerability_score": 0.422,
+      "detection_probability": 0.135,
+      "discovery_reward": 10,
+      "open_ports": [
+        3306
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 45,
+      "host_type": "iot_device",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.12",
+      "vulnerability_score": 0.809,
+      "detection_probability": 0.065,
+      "discovery_reward": 5,
+      "open_ports": [
+        8080
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 46,
+      "host_type": "firewall",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.13",
+      "vulnerability_score": 0.075,
+      "detection_probability": 0.452,
+      "discovery_reward": 30,
+      "open_ports": [
+        443,
+        445,
+        3306,
+        8080
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 47,
+      "host_type": "firewall",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.14",
+      "vulnerability_score": 0.08,
+      "detection_probability": 0.838,
+      "discovery_reward": 30,
+      "open_ports": [
+        22,
+        8080
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 48,
+      "host_type": "router",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.15",
+      "vulnerability_score": 0.13,
+      "detection_probability": 0.272,
+      "discovery_reward": 20,
+      "open_ports": [
+        8080
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 49,
+      "host_type": "iot_device",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.16",
+      "vulnerability_score": 0.868,
+      "detection_probability": 0.073,
+      "discovery_reward": 5,
+      "open_ports": [
+        22,
+        80,
+        1433,
+        3389
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 50,
+      "host_type": "workstation",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.17",
+      "vulnerability_score": 0.459,
+      "detection_probability": 0.197,
+      "discovery_reward": 10,
+      "open_ports": [
+        80,
+        443,
+        3306
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 51,
+      "host_type": "workstation",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.18",
+      "vulnerability_score": 0.195,
+      "detection_probability": 0.064,
+      "discovery_reward": 10,
+      "open_ports": [
+        445
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 52,
+      "host_type": "workstation",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.19",
+      "vulnerability_score": 0.496,
+      "detection_probability": 0.052,
+      "discovery_reward": 10,
+      "open_ports": [
+        22,
+        8080
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 53,
+      "host_type": "router",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.20",
+      "vulnerability_score": 0.116,
+      "detection_probability": 0.157,
+      "discovery_reward": 20,
+      "open_ports": [
+        1433,
+        3306,
+        8080
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 54,
+      "host_type": "firewall",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.21",
+      "vulnerability_score": 0.022,
+      "detection_probability": 0.599,
+      "discovery_reward": 30,
+      "open_ports": [
+        80
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 55,
+      "host_type": "firewall",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.22",
+      "vulnerability_score": 0.094,
+      "detection_probability": 0.503,
+      "discovery_reward": 30,
+      "open_ports": [
+        445,
+        3306,
+        8080
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 56,
+      "host_type": "firewall",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.23",
+      "vulnerability_score": 0.08,
+      "detection_probability": 0.546,
+      "discovery_reward": 30,
+      "open_ports": [
+        443,
+        1433
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 57,
+      "host_type": "workstation",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.24",
+      "vulnerability_score": 0.122,
+      "detection_probability": 0.185,
+      "discovery_reward": 10,
+      "open_ports": [
+        22,
+        80,
+        1433,
+        3306
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 58,
+      "host_type": "router",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.25",
+      "vulnerability_score": 0.096,
+      "detection_probability": 0.211,
+      "discovery_reward": 20,
+      "open_ports": [
+        3306
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 59,
+      "host_type": "router",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.26",
+      "vulnerability_score": 0.055,
+      "detection_probability": 0.147,
+      "discovery_reward": 20,
+      "open_ports": [
+        22,
+        445,
+        3389,
+        8080
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 60,
+      "host_type": "firewall",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.27",
+      "vulnerability_score": 0.035,
+      "detection_probability": 0.592,
+      "discovery_reward": 30,
+      "open_ports": [
+        22
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 61,
+      "host_type": "iot_device",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.28",
+      "vulnerability_score": 0.773,
+      "detection_probability": 0.088,
+      "discovery_reward": 5,
+      "open_ports": [
+        22,
+        80,
+        3306,
+        8080
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 62,
+      "host_type": "router",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.29",
+      "vulnerability_score": 0.149,
+      "detection_probability": 0.206,
+      "discovery_reward": 20,
+      "open_ports": [
+        22,
+        443,
+        1433
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 63,
+      "host_type": "firewall",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.30",
+      "vulnerability_score": 0.093,
+      "detection_probability": 0.854,
+      "discovery_reward": 30,
+      "open_ports": [
+        22,
+        443
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 64,
+      "host_type": "iot_device",
+      "subnet": "CORPORATE",
+      "ip": "10.100.1.31",
+      "vulnerability_score": 0.903,
+      "detection_probability": 0.08,
+      "discovery_reward": 5,
+      "open_ports": [
+        80
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 65,
+      "host_type": "firewall",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.1",
+      "vulnerability_score": 0.015,
+      "detection_probability": 0.869,
+      "discovery_reward": 30,
+      "open_ports": [
+        22,
+        445,
+        3306
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 66,
+      "host_type": "router",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.2",
+      "vulnerability_score": 0.165,
+      "detection_probability": 0.155,
+      "discovery_reward": 20,
+      "open_ports": [
+        80,
+        443,
+        3306,
+        3389
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 67,
+      "host_type": "firewall",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.3",
+      "vulnerability_score": 0.069,
+      "detection_probability": 0.516,
+      "discovery_reward": 30,
+      "open_ports": [
+        443
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 68,
+      "host_type": "firewall",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.4",
+      "vulnerability_score": 0.087,
+      "detection_probability": 0.69,
+      "discovery_reward": 30,
+      "open_ports": [
+        445
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 69,
+      "host_type": "firewall",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.5",
+      "vulnerability_score": 0.099,
+      "detection_probability": 0.888,
+      "discovery_reward": 30,
+      "open_ports": [
+        3306
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 70,
+      "host_type": "firewall",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.6",
+      "vulnerability_score": 0.014,
+      "detection_probability": 0.517,
+      "discovery_reward": 30,
+      "open_ports": [
+        80
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 71,
+      "host_type": "router",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.7",
+      "vulnerability_score": 0.067,
+      "detection_probability": 0.115,
+      "discovery_reward": 20,
+      "open_ports": [
+        1433,
+        3306
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 72,
+      "host_type": "firewall",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.8",
+      "vulnerability_score": 0.047,
+      "detection_probability": 0.721,
+      "discovery_reward": 30,
+      "open_ports": [
+        22,
+        443,
+        8080
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 73,
+      "host_type": "router",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.9",
+      "vulnerability_score": 0.1,
+      "detection_probability": 0.182,
+      "discovery_reward": 20,
+      "open_ports": [
+        443,
+        1433,
+        8080
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 74,
+      "host_type": "database_server",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.10",
+      "vulnerability_score": 0.21,
+      "detection_probability": 0.316,
+      "discovery_reward": 150,
+      "open_ports": [
+        22,
+        8080
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 75,
+      "host_type": "database_server",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.11",
+      "vulnerability_score": 0.342,
+      "detection_probability": 0.404,
+      "discovery_reward": 150,
+      "open_ports": [
+        445,
+        1433,
+        8080
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 76,
+      "host_type": "firewall",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.12",
+      "vulnerability_score": 0.075,
+      "detection_probability": 0.591,
+      "discovery_reward": 30,
+      "open_ports": [
+        80
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 77,
+      "host_type": "firewall",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.13",
+      "vulnerability_score": 0.055,
+      "detection_probability": 0.687,
+      "discovery_reward": 30,
+      "open_ports": [
+        22,
+        80,
+        1433,
+        3389
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 78,
+      "host_type": "router",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.14",
+      "vulnerability_score": 0.149,
+      "detection_probability": 0.204,
+      "discovery_reward": 20,
+      "open_ports": [
+        80,
+        1433,
+        8080
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 79,
+      "host_type": "database_server",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.15",
+      "vulnerability_score": 0.199,
+      "detection_probability": 0.52,
+      "discovery_reward": 150,
+      "open_ports": [
+        443,
+        445,
+        8080
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 80,
+      "host_type": "database_server",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.16",
+      "vulnerability_score": 0.308,
+      "detection_probability": 0.378,
+      "discovery_reward": 150,
+      "open_ports": [
+        22,
+        443,
+        1433,
+        3306
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 81,
+      "host_type": "database_server",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.17",
+      "vulnerability_score": 0.374,
+      "detection_probability": 0.461,
+      "discovery_reward": 150,
+      "open_ports": [
+        3389,
+        8080
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 82,
+      "host_type": "database_server",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.18",
+      "vulnerability_score": 0.271,
+      "detection_probability": 0.531,
+      "discovery_reward": 150,
+      "open_ports": [
+        445,
+        3389
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 83,
+      "host_type": "firewall",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.19",
+      "vulnerability_score": 0.063,
+      "detection_probability": 0.469,
+      "discovery_reward": 30,
+      "open_ports": [
+        443,
+        1433,
+        3389
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 84,
+      "host_type": "database_server",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.20",
+      "vulnerability_score": 0.223,
+      "detection_probability": 0.402,
+      "discovery_reward": 150,
+      "open_ports": [
+        3306,
+        8080
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 85,
+      "host_type": "database_server",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.21",
+      "vulnerability_score": 0.363,
+      "detection_probability": 0.206,
+      "discovery_reward": 150,
+      "open_ports": [
+        3389
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 86,
+      "host_type": "firewall",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.22",
+      "vulnerability_score": 0.074,
+      "detection_probability": 0.635,
+      "discovery_reward": 30,
+      "open_ports": [
+        443
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 87,
+      "host_type": "router",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.23",
+      "vulnerability_score": 0.054,
+      "detection_probability": 0.133,
+      "discovery_reward": 20,
+      "open_ports": [
+        443
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 88,
+      "host_type": "firewall",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.24",
+      "vulnerability_score": 0.093,
+      "detection_probability": 0.852,
+      "discovery_reward": 30,
+      "open_ports": [
+        443,
+        445,
+        3306
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 89,
+      "host_type": "database_server",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.25",
+      "vulnerability_score": 0.314,
+      "detection_probability": 0.248,
+      "discovery_reward": 150,
+      "open_ports": [
+        22,
+        80,
+        3306
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 90,
+      "host_type": "firewall",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.26",
+      "vulnerability_score": 0.093,
+      "detection_probability": 0.875,
+      "discovery_reward": 30,
+      "open_ports": [
+        443,
+        445,
+        3306,
+        8080
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 91,
+      "host_type": "firewall",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.27",
+      "vulnerability_score": 0.022,
+      "detection_probability": 0.492,
+      "discovery_reward": 30,
+      "open_ports": [
+        443
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 92,
+      "host_type": "firewall",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.28",
+      "vulnerability_score": 0.063,
+      "detection_probability": 0.737,
+      "discovery_reward": 30,
+      "open_ports": [
+        80,
+        443,
+        445,
+        3389
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 93,
+      "host_type": "firewall",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.29",
+      "vulnerability_score": 0.063,
+      "detection_probability": 0.872,
+      "discovery_reward": 30,
+      "open_ports": [
+        445
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 94,
+      "host_type": "router",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.30",
+      "vulnerability_score": 0.101,
+      "detection_probability": 0.213,
+      "discovery_reward": 20,
+      "open_ports": [
+        443,
+        445,
+        1433,
+        3389
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 95,
+      "host_type": "database_server",
+      "subnet": "SECURE_DB",
+      "ip": "10.200.5.31",
+      "vulnerability_score": 0.113,
+      "detection_probability": 0.578,
+      "discovery_reward": 150,
+      "open_ports": [
+        1433,
+        3389
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 96,
+      "host_type": "router",
+      "subnet": "CLOUD_CORE",
+      "ip": "172.16.0.1",
+      "vulnerability_score": 0.063,
+      "detection_probability": 0.127,
+      "discovery_reward": 20,
+      "open_ports": [
+        22,
+        80,
+        443
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 97,
+      "host_type": "firewall",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.1",
+      "vulnerability_score": 0.081,
+      "detection_probability": 0.764,
+      "discovery_reward": 30,
+      "open_ports": [
+        443,
+        1433,
+        8080
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 98,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.2",
+      "vulnerability_score": 0.226,
+      "detection_probability": 0.329,
+      "discovery_reward": 80,
+      "open_ports": [
+        3306
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 99,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.3",
+      "vulnerability_score": 0.12,
+      "detection_probability": 0.397,
+      "discovery_reward": 80,
+      "open_ports": [
+        445,
+        1433,
+        3389
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 100,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.4",
+      "vulnerability_score": 0.318,
+      "detection_probability": 0.29,
+      "discovery_reward": 50,
+      "open_ports": [
+        445
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 101,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.5",
+      "vulnerability_score": 0.488,
+      "detection_probability": 0.383,
+      "discovery_reward": 50,
+      "open_ports": [
+        445,
+        1433
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 102,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.6",
+      "vulnerability_score": 0.263,
+      "detection_probability": 0.407,
+      "discovery_reward": 80,
+      "open_ports": [
+        80,
+        443,
+        3306
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 103,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.7",
+      "vulnerability_score": 0.729,
+      "detection_probability": 0.325,
+      "discovery_reward": 50,
+      "open_ports": [
+        3389
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 104,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.8",
+      "vulnerability_score": 0.212,
+      "detection_probability": 0.223,
+      "discovery_reward": 80,
+      "open_ports": [
+        22,
+        445
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 105,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.9",
+      "vulnerability_score": 0.223,
+      "detection_probability": 0.371,
+      "discovery_reward": 80,
+      "open_ports": [
+        445,
+        3306
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 106,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.10",
+      "vulnerability_score": 0.777,
+      "detection_probability": 0.363,
+      "discovery_reward": 50,
+      "open_ports": [
+        1433,
+        3306
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 107,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.11",
+      "vulnerability_score": 0.259,
+      "detection_probability": 0.287,
+      "discovery_reward": 80,
+      "open_ports": [
+        22,
+        443,
+        8080
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 108,
+      "host_type": "cloud_vm",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.12",
+      "vulnerability_score": 0.681,
+      "detection_probability": 0.274,
+      "discovery_reward": 40,
+      "open_ports": [
+        443,
+        445,
+        3389
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 109,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.13",
+      "vulnerability_score": 0.512,
+      "detection_probability": 0.153,
+      "discovery_reward": 50,
+      "open_ports": [
+        80,
+        443,
+        3306
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 110,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.14",
+      "vulnerability_score": 0.364,
+      "detection_probability": 0.365,
+      "discovery_reward": 50,
+      "open_ports": [
+        22,
+        80,
+        3306,
+        3389
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 111,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.15",
+      "vulnerability_score": 0.201,
+      "detection_probability": 0.461,
+      "discovery_reward": 80,
+      "open_ports": [
+        22,
+        443,
+        1433,
+        3306
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 112,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.16",
+      "vulnerability_score": 0.182,
+      "detection_probability": 0.433,
+      "discovery_reward": 80,
+      "open_ports": [
+        22,
+        443,
+        3389,
+        8080
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 113,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.17",
+      "vulnerability_score": 0.409,
+      "detection_probability": 0.291,
+      "discovery_reward": 50,
+      "open_ports": [
+        1433
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 114,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.18",
+      "vulnerability_score": 0.144,
+      "detection_probability": 0.456,
+      "discovery_reward": 80,
+      "open_ports": [
+        80,
+        1433
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 115,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.19",
+      "vulnerability_score": 0.126,
+      "detection_probability": 0.339,
+      "discovery_reward": 80,
+      "open_ports": [
+        3389
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 116,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.20",
+      "vulnerability_score": 0.467,
+      "detection_probability": 0.206,
+      "discovery_reward": 50,
+      "open_ports": [
+        22
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 117,
+      "host_type": "cloud_vm",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.21",
+      "vulnerability_score": 0.381,
+      "detection_probability": 0.1,
+      "discovery_reward": 40,
+      "open_ports": [
+        3389,
+        8080
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 118,
+      "host_type": "cloud_vm",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.22",
+      "vulnerability_score": 0.345,
+      "detection_probability": 0.09,
+      "discovery_reward": 40,
+      "open_ports": [
+        80,
+        445,
+        3306
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 119,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.23",
+      "vulnerability_score": 0.424,
+      "detection_probability": 0.104,
+      "discovery_reward": 50,
+      "open_ports": [
+        80
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 120,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.24",
+      "vulnerability_score": 0.258,
+      "detection_probability": 0.165,
+      "discovery_reward": 80,
+      "open_ports": [
+        22,
+        80,
+        1433
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 121,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.25",
+      "vulnerability_score": 0.424,
+      "detection_probability": 0.182,
+      "discovery_reward": 50,
+      "open_ports": [
+        3389
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 122,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.26",
+      "vulnerability_score": 0.126,
+      "detection_probability": 0.409,
+      "discovery_reward": 80,
+      "open_ports": [
+        22,
+        80,
+        3389
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 123,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.27",
+      "vulnerability_score": 0.652,
+      "detection_probability": 0.32,
+      "discovery_reward": 50,
+      "open_ports": [
+        22
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 124,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.28",
+      "vulnerability_score": 0.602,
+      "detection_probability": 0.146,
+      "discovery_reward": 50,
+      "open_ports": [
+        443,
+        445,
+        1433,
+        3389
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 125,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.29",
+      "vulnerability_score": 0.202,
+      "detection_probability": 0.158,
+      "discovery_reward": 80,
+      "open_ports": [
+        22,
+        80,
+        8080
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 126,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.30",
+      "vulnerability_score": 0.588,
+      "detection_probability": 0.213,
+      "discovery_reward": 50,
+      "open_ports": [
+        80,
+        445,
+        1433,
+        8080
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 127,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.31",
+      "vulnerability_score": 0.157,
+      "detection_probability": 0.396,
+      "discovery_reward": 80,
+      "open_ports": [
+        22,
+        3389
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 128,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.32",
+      "vulnerability_score": 0.497,
+      "detection_probability": 0.212,
+      "discovery_reward": 50,
+      "open_ports": [
+        8080
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 129,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.33",
+      "vulnerability_score": 0.788,
+      "detection_probability": 0.219,
+      "discovery_reward": 50,
+      "open_ports": [
+        443,
+        8080
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 130,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.34",
+      "vulnerability_score": 0.354,
+      "detection_probability": 0.193,
+      "discovery_reward": 50,
+      "open_ports": [
+        22,
+        80
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 131,
+      "host_type": "cloud_vm",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.35",
+      "vulnerability_score": 0.304,
+      "detection_probability": 0.286,
+      "discovery_reward": 40,
+      "open_ports": [
+        80,
+        8080
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 132,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.36",
+      "vulnerability_score": 0.719,
+      "detection_probability": 0.257,
+      "discovery_reward": 50,
+      "open_ports": [
+        22,
+        3389
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 133,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.37",
+      "vulnerability_score": 0.182,
+      "detection_probability": 0.409,
+      "discovery_reward": 80,
+      "open_ports": [
+        22,
+        443
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 134,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.38",
+      "vulnerability_score": 0.599,
+      "detection_probability": 0.361,
+      "discovery_reward": 50,
+      "open_ports": [
+        445,
+        1433,
+        3389
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 135,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.39",
+      "vulnerability_score": 0.55,
+      "detection_probability": 0.388,
+      "discovery_reward": 50,
+      "open_ports": [
+        445,
+        3306
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 136,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.40",
+      "vulnerability_score": 0.203,
+      "detection_probability": 0.451,
+      "discovery_reward": 80,
+      "open_ports": [
+        80
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 137,
+      "host_type": "web_server",
+      "subnet": "CLOUD_PUBLIC",
+      "ip": "172.16.10.41",
+      "vulnerability_score": 0.339,
+      "detection_probability": 0.138,
+      "discovery_reward": 50,
+      "open_ports": [
+        443
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 138,
+      "host_type": "firewall",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.1",
+      "vulnerability_score": 0.077,
+      "detection_probability": 0.483,
+      "discovery_reward": 30,
+      "open_ports": [
+        22,
+        80,
+        445,
+        3306
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 139,
+      "host_type": "database_server",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.2",
+      "vulnerability_score": 0.341,
+      "detection_probability": 0.395,
+      "discovery_reward": 150,
+      "open_ports": [
+        22,
+        443,
+        3389,
+        8080
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 140,
+      "host_type": "database_server",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.3",
+      "vulnerability_score": 0.377,
+      "detection_probability": 0.471,
+      "discovery_reward": 150,
+      "open_ports": [
+        1433,
+        3306,
+        8080
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 141,
+      "host_type": "database_server",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.4",
+      "vulnerability_score": 0.161,
+      "detection_probability": 0.446,
+      "discovery_reward": 150,
+      "open_ports": [
+        445,
+        1433,
+        3389
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 142,
+      "host_type": "database_server",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.5",
+      "vulnerability_score": 0.316,
+      "detection_probability": 0.541,
+      "discovery_reward": 150,
+      "open_ports": [
+        443,
+        1433
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 143,
+      "host_type": "cloud_vm",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.6",
+      "vulnerability_score": 0.359,
+      "detection_probability": 0.095,
+      "discovery_reward": 40,
+      "open_ports": [
+        22,
+        80,
+        443,
+        8080
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 144,
+      "host_type": "database_server",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.7",
+      "vulnerability_score": 0.238,
+      "detection_probability": 0.238,
+      "discovery_reward": 150,
+      "open_ports": [
+        22,
+        443,
+        1433,
+        8080
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 145,
+      "host_type": "cloud_vm",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.8",
+      "vulnerability_score": 0.664,
+      "detection_probability": 0.119,
+      "discovery_reward": 40,
+      "open_ports": [
+        443,
+        445,
+        1433,
+        8080
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 146,
+      "host_type": "database_server",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.9",
+      "vulnerability_score": 0.298,
+      "detection_probability": 0.231,
+      "discovery_reward": 150,
+      "open_ports": [
+        80,
+        3306
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 147,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.10",
+      "vulnerability_score": 0.213,
+      "detection_probability": 0.194,
+      "discovery_reward": 80,
+      "open_ports": [
+        1433,
+        3306,
+        3389,
+        8080
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 148,
+      "host_type": "database_server",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.11",
+      "vulnerability_score": 0.361,
+      "detection_probability": 0.467,
+      "discovery_reward": 150,
+      "open_ports": [
+        22,
+        80,
+        445,
+        3389
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 149,
+      "host_type": "cloud_vm",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.12",
+      "vulnerability_score": 0.272,
+      "detection_probability": 0.169,
+      "discovery_reward": 40,
+      "open_ports": [
+        3306
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 150,
+      "host_type": "cloud_vm",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.13",
+      "vulnerability_score": 0.268,
+      "detection_probability": 0.252,
+      "discovery_reward": 40,
+      "open_ports": [
+        443,
+        1433,
+        3389,
+        8080
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 151,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.14",
+      "vulnerability_score": 0.175,
+      "detection_probability": 0.285,
+      "discovery_reward": 80,
+      "open_ports": [
+        443,
+        1433,
+        3306,
+        3389
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 152,
+      "host_type": "cloud_vm",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.15",
+      "vulnerability_score": 0.678,
+      "detection_probability": 0.286,
+      "discovery_reward": 40,
+      "open_ports": [
+        443,
+        445,
+        3389
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 153,
+      "host_type": "database_server",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.16",
+      "vulnerability_score": 0.337,
+      "detection_probability": 0.474,
+      "discovery_reward": 150,
+      "open_ports": [
+        22,
+        80,
+        443,
+        3306
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 154,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.17",
+      "vulnerability_score": 0.246,
+      "detection_probability": 0.225,
+      "discovery_reward": 80,
+      "open_ports": [
+        443,
+        3389
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 155,
+      "host_type": "cloud_vm",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.18",
+      "vulnerability_score": 0.298,
+      "detection_probability": 0.14,
+      "discovery_reward": 40,
+      "open_ports": [
+        22,
+        1433
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 156,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.19",
+      "vulnerability_score": 0.283,
+      "detection_probability": 0.326,
+      "discovery_reward": 80,
+      "open_ports": [
+        1433
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 157,
+      "host_type": "database_server",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.20",
+      "vulnerability_score": 0.244,
+      "detection_probability": 0.218,
+      "discovery_reward": 150,
+      "open_ports": [
+        22,
+        1433,
+        3306
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 158,
+      "host_type": "database_server",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.21",
+      "vulnerability_score": 0.378,
+      "detection_probability": 0.599,
+      "discovery_reward": 150,
+      "open_ports": [
+        80,
+        445,
+        1433,
+        8080
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 159,
+      "host_type": "database_server",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.22",
+      "vulnerability_score": 0.368,
+      "detection_probability": 0.261,
+      "discovery_reward": 150,
+      "open_ports": [
+        22,
+        443
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 160,
+      "host_type": "cloud_vm",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.23",
+      "vulnerability_score": 0.228,
+      "detection_probability": 0.209,
+      "discovery_reward": 40,
+      "open_ports": [
+        3306
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 161,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.24",
+      "vulnerability_score": 0.297,
+      "detection_probability": 0.218,
+      "discovery_reward": 80,
+      "open_ports": [
+        3306
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 162,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.25",
+      "vulnerability_score": 0.28,
+      "detection_probability": 0.209,
+      "discovery_reward": 80,
+      "open_ports": [
+        22,
+        445,
+        3306
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 163,
+      "host_type": "database_server",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.26",
+      "vulnerability_score": 0.118,
+      "detection_probability": 0.277,
+      "discovery_reward": 150,
+      "open_ports": [
+        22,
+        1433
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 164,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.27",
+      "vulnerability_score": 0.222,
+      "detection_probability": 0.391,
+      "discovery_reward": 80,
+      "open_ports": [
+        22,
+        443,
+        3306,
+        3389
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 165,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.28",
+      "vulnerability_score": 0.124,
+      "detection_probability": 0.313,
+      "discovery_reward": 80,
+      "open_ports": [
+        8080
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 166,
+      "host_type": "cloud_vm",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.29",
+      "vulnerability_score": 0.565,
+      "detection_probability": 0.096,
+      "discovery_reward": 40,
+      "open_ports": [
+        443
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 167,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.30",
+      "vulnerability_score": 0.192,
+      "detection_probability": 0.457,
+      "discovery_reward": 80,
+      "open_ports": [
+        1433,
+        3389
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 168,
+      "host_type": "cloud_vm",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.31",
+      "vulnerability_score": 0.574,
+      "detection_probability": 0.235,
+      "discovery_reward": 40,
+      "open_ports": [
+        22,
+        445,
+        3306
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 169,
+      "host_type": "database_server",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.32",
+      "vulnerability_score": 0.195,
+      "detection_probability": 0.29,
+      "discovery_reward": 150,
+      "open_ports": [
+        80,
+        1433
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 170,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.33",
+      "vulnerability_score": 0.24,
+      "detection_probability": 0.243,
+      "discovery_reward": 80,
+      "open_ports": [
+        443,
+        1433,
+        3306,
+        8080
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 171,
+      "host_type": "database_server",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.34",
+      "vulnerability_score": 0.306,
+      "detection_probability": 0.268,
+      "discovery_reward": 150,
+      "open_ports": [
+        80,
+        443,
+        1433,
+        3389
+      ],
+      "os": "Embedded Firmware",
+      "status": "undiscovered"
+    },
+    {
+      "id": 172,
+      "host_type": "database_server",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.35",
+      "vulnerability_score": 0.343,
+      "detection_probability": 0.519,
+      "discovery_reward": 150,
+      "open_ports": [
+        3306,
+        8080
+      ],
+      "os": "Cisco IOS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 173,
+      "host_type": "database_server",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.36",
+      "vulnerability_score": 0.338,
+      "detection_probability": 0.236,
+      "discovery_reward": 150,
+      "open_ports": [
+        80,
+        1433
+      ],
+      "os": "Ubuntu 22.04 LTS",
+      "status": "undiscovered"
+    },
+    {
+      "id": 174,
+      "host_type": "cloud_vm",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.37",
+      "vulnerability_score": 0.459,
+      "detection_probability": 0.208,
+      "discovery_reward": 40,
+      "open_ports": [
+        443,
+        445,
+        1433,
+        8080
+      ],
+      "os": "Windows 11",
+      "status": "undiscovered"
+    },
+    {
+      "id": 175,
+      "host_type": "database_server",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.38",
+      "vulnerability_score": 0.277,
+      "detection_probability": 0.214,
+      "discovery_reward": 150,
+      "open_ports": [
+        3306
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    },
+    {
+      "id": 176,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.39",
+      "vulnerability_score": 0.167,
+      "detection_probability": 0.466,
+      "discovery_reward": 80,
+      "open_ports": [
+        443,
+        3306
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 177,
+      "host_type": "cloud_vm",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.40",
+      "vulnerability_score": 0.576,
+      "detection_probability": 0.16,
+      "discovery_reward": 40,
+      "open_ports": [
+        445,
+        3306,
+        3389,
+        8080
+      ],
+      "os": "Windows Server 2022",
+      "status": "undiscovered"
+    },
+    {
+      "id": 178,
+      "host_type": "cloud_storage",
+      "subnet": "CLOUD_PRIVATE",
+      "ip": "172.16.20.41",
+      "vulnerability_score": 0.22,
+      "detection_probability": 0.319,
+      "discovery_reward": 80,
+      "open_ports": [
+        22,
+        80,
+        1433,
+        8080
+      ],
+      "os": "Linux Kernel 5.15",
+      "status": "undiscovered"
+    }
+  ],
+  "edges": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      34
+    ],
+    [
+      2,
+      65
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      3,
+      9
+    ],
+    [
+      3,
+      10
+    ],
+    [
+      3,
+      11
+    ],
+    [
+      3,
+      12
+    ],
+    [
+      3,
+      13
+    ],
+    [
+      3,
+      14
+    ],
+    [
+      3,
+      15
+    ],
+    [
+      3,
+      16
+    ],
+    [
+      3,
+      17
+    ],
+    [
+      3,
+      18
+    ],
+    [
+      3,
+      19
+    ],
+    [
+      3,
+      20
+    ],
+    [
+      3,
+      21
+    ],
+    [
+      3,
+      22
+    ],
+    [
+      3,
+      23
+    ],
+    [
+      3,
+      24
+    ],
+    [
+      3,
+      25
+    ],
+    [
+      3,
+      26
+    ],
+    [
+      3,
+      27
+    ],
+    [
+      3,
+      28
+    ],
+    [
+      3,
+      29
+    ],
+    [
+      3,
+      30
+    ],
+    [
+      3,
+      31
+    ],
+    [
+      3,
+      32
+    ],
+    [
+      3,
+      33
+    ],
+    [
+      4,
+      30
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      6,
+      18
+    ],
+    [
+      6,
+      22
+    ],
+    [
+      7,
+      25
+    ],
+    [
+      7,
+      19
+    ],
+    [
+      7,
+      32
+    ],
+    [
+      7,
+      14
+    ],
+    [
+      8,
+      16
+    ],
+    [
+      9,
+      32
+    ],
+    [
+      9,
+      33
+    ],
+    [
+      9,
+      27
+    ],
+    [
+      10,
+      21
+    ],
+    [
+      10,
+      12
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      10,
+      29
+    ],
+    [
+      11,
+      28
+    ],
+    [
+      11,
+      29
+    ],
+    [
+      12,
+      23
+    ],
+    [
+      13,
+      25
+    ],
+    [
+      14,
+      19
+    ],
+    [
+      15,
+      28
+    ],
+    [
+      16,
+      28
+    ],
+    [
+      17,
+      33
+    ],
+    [
+      17,
+      30
+    ],
+    [
+      18,
+      26
+    ],
+    [
+      18,
+      19
+    ],
+    [
+      20,
+      29
+    ],
+    [
+      22,
+      24
+    ],
+    [
+      23,
+      24
+    ],
+    [
+      25,
+      33
+    ],
+    [
+      27,
+      33
+    ],
+    [
+      27,
+      32
+    ],
+    [
+      27,
+      31
+    ],
+    [
+      28,
+      29
+    ],
+    [
+      34,
+      35
+    ],
+    [
+      34,
+      36
+    ],
+    [
+      34,
+      37
+    ],
+    [
+      34,
+      38
+    ],
+    [
+      34,
+      39
+    ],
+    [
+      34,
+      40
+    ],
+    [
+      34,
+      41
+    ],
+    [
+      34,
+      42
+    ],
+    [
+      34,
+      43
+    ],
+    [
+      34,
+      44
+    ],
+    [
+      34,
+      45
+    ],
+    [
+      34,
+      46
+    ],
+    [
+      34,
+      47
+    ],
+    [
+      34,
+      48
+    ],
+    [
+      34,
+      49
+    ],
+    [
+      34,
+      50
+    ],
+    [
+      34,
+      51
+    ],
+    [
+      34,
+      52
+    ],
+    [
+      34,
+      53
+    ],
+    [
+      34,
+      54
+    ],
+    [
+      34,
+      55
+    ],
+    [
+      34,
+      56
+    ],
+    [
+      34,
+      57
+    ],
+    [
+      34,
+      58
+    ],
+    [
+      34,
+      59
+    ],
+    [
+      34,
+      60
+    ],
+    [
+      34,
+      61
+    ],
+    [
+      34,
+      62
+    ],
+    [
+      34,
+      63
+    ],
+    [
+      34,
+      64
+    ],
+    [
+      35,
+      64
+    ],
+    [
+      35,
+      38
+    ],
+    [
+      35,
+      49
+    ],
+    [
+      36,
+      54
+    ],
+    [
+      36,
+      46
+    ],
+    [
+      37,
+      42
+    ],
+    [
+      39,
+      42
+    ],
+    [
+      40,
+      43
+    ],
+    [
+      40,
+      62
+    ],
+    [
+      41,
+      48
+    ],
+    [
+      43,
+      60
+    ],
+    [
+      43,
+      56
+    ],
+    [
+      43,
+      46
+    ],
+    [
+      43,
+      61
+    ],
+    [
+      44,
+      62
+    ],
+    [
+      44,
+      45
+    ],
+    [
+      44,
+      53
+    ],
+    [
+      45,
+      56
+    ],
+    [
+      47,
+      58
+    ],
+    [
+      47,
+      49
+    ],
+    [
+      47,
+      53
+    ],
+    [
+      48,
+      53
+    ],
+    [
+      49,
+      52
+    ],
+    [
+      50,
+      55
+    ],
+    [
+      51,
+      59
+    ],
+    [
+      52,
+      59
+    ],
+    [
+      52,
+      62
+    ],
+    [
+      53,
+      58
+    ],
+    [
+      54,
+      59
+    ],
+    [
+      55,
+      60
+    ],
+    [
+      56,
+      64
+    ],
+    [
+      58,
+      64
+    ],
+    [
+      65,
+      66
+    ],
+    [
+      65,
+      67
+    ],
+    [
+      65,
+      68
+    ],
+    [
+      65,
+      69
+    ],
+    [
+      65,
+      70
+    ],
+    [
+      65,
+      71
+    ],
+    [
+      65,
+      72
+    ],
+    [
+      65,
+      73
+    ],
+    [
+      65,
+      74
+    ],
+    [
+      65,
+      75
+    ],
+    [
+      65,
+      76
+    ],
+    [
+      65,
+      77
+    ],
+    [
+      65,
+      78
+    ],
+    [
+      65,
+      79
+    ],
+    [
+      65,
+      80
+    ],
+    [
+      65,
+      81
+    ],
+    [
+      65,
+      82
+    ],
+    [
+      65,
+      83
+    ],
+    [
+      65,
+      84
+    ],
+    [
+      65,
+      85
+    ],
+    [
+      65,
+      86
+    ],
+    [
+      65,
+      87
+    ],
+    [
+      65,
+      88
+    ],
+    [
+      65,
+      89
+    ],
+    [
+      65,
+      90
+    ],
+    [
+      65,
+      91
+    ],
+    [
+      65,
+      92
+    ],
+    [
+      65,
+      93
+    ],
+    [
+      65,
+      94
+    ],
+    [
+      65,
+      95
+    ],
+    [
+      66,
+      85
+    ],
+    [
+      66,
+      72
+    ],
+    [
+      66,
+      92
+    ],
+    [
+      67,
+      94
+    ],
+    [
+      69,
+      77
+    ],
+    [
+      69,
+      75
+    ],
+    [
+      69,
+      90
+    ],
+    [
+      69,
+      70
+    ],
+    [
+      69,
+      95
+    ],
+    [
+      69,
+      80
+    ],
+    [
+      70,
+      92
+    ],
+    [
+      71,
+      75
+    ],
+    [
+      71,
+      94
+    ],
+    [
+      71,
+      90
+    ],
+    [
+      72,
+      83
+    ],
+    [
+      72,
+      77
+    ],
+    [
+      73,
+      80
+    ],
+    [
+      73,
+      95
+    ],
+    [
+      74,
+      81
+    ],
+    [
+      74,
+      85
+    ],
+    [
+      74,
+      87
+    ],
+    [
+      75,
+      95
+    ],
+    [
+      75,
+      84
+    ],
+    [
+      75,
+      80
+    ],
+    [
+      76,
+      85
+    ],
+    [
+      79,
+      89
+    ],
+    [
+      79,
+      94
+    ],
+    [
+      80,
+      82
+    ],
+    [
+      81,
+      92
+    ],
+    [
+      82,
+      92
+    ],
+    [
+      83,
+      94
+    ],
+    [
+      83,
+      91
+    ],
+    [
+      84,
+      94
+    ],
+    [
+      93,
+      95
+    ],
+    [
+      95,
+      96
+    ],
+    [
+      96,
+      97
+    ],
+    [
+      96,
+      138
+    ],
+    [
+      97,
+      98
+    ],
+    [
+      97,
+      99
+    ],
+    [
+      97,
+      100
+    ],
+    [
+      97,
+      101
+    ],
+    [
+      97,
+      102
+    ],
+    [
+      97,
+      103
+    ],
+    [
+      97,
+      104
+    ],
+    [
+      97,
+      105
+    ],
+    [
+      97,
+      106
+    ],
+    [
+      97,
+      107
+    ],
+    [
+      97,
+      108
+    ],
+    [
+      97,
+      109
+    ],
+    [
+      97,
+      110
+    ],
+    [
+      97,
+      111
+    ],
+    [
+      97,
+      112
+    ],
+    [
+      97,
+      113
+    ],
+    [
+      97,
+      114
+    ],
+    [
+      97,
+      115
+    ],
+    [
+      97,
+      116
+    ],
+    [
+      97,
+      117
+    ],
+    [
+      97,
+      118
+    ],
+    [
+      97,
+      119
+    ],
+    [
+      97,
+      120
+    ],
+    [
+      97,
+      121
+    ],
+    [
+      97,
+      122
+    ],
+    [
+      97,
+      123
+    ],
+    [
+      97,
+      124
+    ],
+    [
+      97,
+      125
+    ],
+    [
+      97,
+      126
+    ],
+    [
+      97,
+      127
+    ],
+    [
+      97,
+      128
+    ],
+    [
+      97,
+      129
+    ],
+    [
+      97,
+      130
+    ],
+    [
+      97,
+      131
+    ],
+    [
+      97,
+      132
+    ],
+    [
+      97,
+      133
+    ],
+    [
+      97,
+      134
+    ],
+    [
+      97,
+      135
+    ],
+    [
+      97,
+      136
+    ],
+    [
+      97,
+      137
+    ],
+    [
+      98,
+      158
+    ],
+    [
+      102,
+      165
+    ],
+    [
+      105,
+      168
+    ],
+    [
+      127,
+      175
+    ],
+    [
+      130,
+      140
+    ],
+    [
+      135,
+      151
+    ],
+    [
+      136,
+      148
+    ],
+    [
+      138,
+      139
+    ],
+    [
+      138,
+      140
+    ],
+    [
+      138,
+      141
+    ],
+    [
+      138,
+      142
+    ],
+    [
+      138,
+      143
+    ],
+    [
+      138,
+      144
+    ],
+    [
+      138,
+      145
+    ],
+    [
+      138,
+      146
+    ],
+    [
+      138,
+      147
+    ],
+    [
+      138,
+      148
+    ],
+    [
+      138,
+      149
+    ],
+    [
+      138,
+      150
+    ],
+    [
+      138,
+      151
+    ],
+    [
+      138,
+      152
+    ],
+    [
+      138,
+      153
+    ],
+    [
+      138,
+      154
+    ],
+    [
+      138,
+      155
+    ],
+    [
+      138,
+      156
+    ],
+    [
+      138,
+      157
+    ],
+    [
+      138,
+      158
+    ],
+    [
+      138,
+      159
+    ],
+    [
+      138,
+      160
+    ],
+    [
+      138,
+      161
+    ],
+    [
+      138,
+      162
+    ],
+    [
+      138,
+      163
+    ],
+    [
+      138,
+      164
+    ],
+    [
+      138,
+      165
+    ],
+    [
+      138,
+      166
+    ],
+    [
+      138,
+      167
+    ],
+    [
+      138,
+      168
+    ],
+    [
+      138,
+      169
+    ],
+    [
+      138,
+      170
+    ],
+    [
+      138,
+      171
+    ],
+    [
+      138,
+      172
+    ],
+    [
+      138,
+      173
+    ],
+    [
+      138,
+      174
+    ],
+    [
+      138,
+      175
+    ],
+    [
+      138,
+      176
+    ],
+    [
+      138,
+      177
+    ],
+    [
+      138,
+      178
+    ]
+  ]
+}

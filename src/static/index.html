@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIR-NDF: AI-Reinforced Adaptive Network Discovery Framework</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Vis.js for Network Topology Graph -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <!-- Chart.js for Training Curves & Benchmarks -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        :root {
+            --bg-base: #0a0b0e;
+            --bg-surface: #12141c;
+            --bg-card: #1a1d29;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --primary: #00f2fe;
+            --primary-glow: rgba(0, 242, 254, 0.15);
+            --secondary: #4facfe;
+            --success: #00e676;
+            --warning: #ffb300;
+            --danger: #ff1744;
+            --text-main: #f5f6f9;
+            --text-muted: #8e95af;
+            --glow-green: rgba(0, 230, 118, 0.3);
+            --glow-red: rgba(255, 23, 68, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Typography headings */
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        header {
+            background-color: var(--bg-surface);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-title-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .header-logo {
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.3));
+        }
+
+        .header-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-title span {
+            color: var(--primary);
+        }
+
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-muted);
+            padding: 0.6rem 1.2rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            background: rgba(0, 242, 254, 0.06);
+            border-color: rgba(0, 242, 254, 0.25);
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        .main-container {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cards & Grids */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .grid-layout-sidebar {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2rem;
+        }
+
+        .glass-card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .glass-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 0.75rem;
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--text-main);
+        }
+
+        .card-title i {
+            color: var(--primary);
+        }
+
+        /* Controls and Forms */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        select, input[type="number"], input[type="text"] {
+            width: 100%;
+            background-color: var(--bg-base);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-main);
+            padding: 0.75rem 1rem;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        select:focus, input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.1);
+        }
+
+        .cyber-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            color: var(--bg-base);
+            padding: 0.85rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 242, 254, 0.2);
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cyber-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 242, 254, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .cyber-btn:active {
+            transform: translateY(0);
+        }
+
+        .cyber-btn.sec {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+
+        .cyber-btn.sec:hover {
+            background: rgba(0, 242, 254, 0.05);
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        /* Graph Visualization Box */
+        #network-visualization {
+            width: 100%;
+            height: 600px;
+            background-color: #0b0c10;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        /* Stats Cards */
+        .stat-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-3px);
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .stat-value.success { color: var(--success); }
+        .stat-value.warning { color: var(--warning); }
+        .stat-value.danger { color: var(--danger); }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* Training progress bar styling */
+        .progress-container {
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .progress-bar-bg {
+            background-color: var(--bg-base);
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .progress-bar-fill {
+            background: linear-gradient(90deg, var(--primary), var(--success));
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        /* Table styling */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--bg-card);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            font-size: 0.95rem;
+        }
+
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.02);
+            color: var(--primary);
+        }
+
+        /* Legend Panel */
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            background: rgba(255,255,255,0.02);
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-surface);
+            font-size: 0.85rem;
+            margin-top: auto;
+        }
+
+        footer span {
+            color: var(--primary);
+        }
+
+        /* Code and equations rendering */
+        .math-block {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: 'Space Grotesk', monospace;
+            border-left: 3px solid var(--primary);
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            color: #d1d5db;
+        }
+
+        .list-bullets {
+            list-style: square;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .list-bullets li {
+            color: var(--text-muted);
+        }
+
+        .list-bullets li strong {
+            color: var(--text-main);
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        .badge.info { background-color: rgba(0, 242, 254, 0.15); color: var(--primary); border: 1px solid rgba(0, 242, 254, 0.3); }
+        .badge.success { background-color: rgba(0, 230, 118, 0.15); color: var(--success); border: 1px solid rgba(0, 230, 118, 0.3); }
+        .badge.warning { background-color: rgba(255, 179, 0, 0.15); color: var(--warning); border: 1px solid rgba(255, 179, 0, 0.3); }
+        .badge.danger { background-color: rgba(255, 23, 68, 0.15); color: var(--danger); border: 1px solid rgba(255, 23, 68, 0.3); }
+
+        .spinner {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-title-container">
+            <i class="fa-solid fa-shield-halved header-logo"></i>
+            <div class="header-title">AIR-NDF<span></span></div>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('topology')"><i class="fa-solid fa-network-wired"></i> Topology</button>
+            <button class="tab-btn" onclick="switchTab('training')"><i class="fa-solid fa-brain"></i> Train Center</button>
+            <button class="tab-btn" onclick="switchTab('benchmark')"><i class="fa-solid fa-square-poll-vertical"></i> Benchmark Arena</button>
+            <button class="tab-btn" onclick="switchTab('theory')"><i class="fa-solid fa-book-open"></i> MDP Framework</button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        
+        <!-- TAB 1: TOPOLOGY VIEWER -->
+        <div id="topology-tab" class="tab-content active">
+            <div class="grid-layout-sidebar">
+                <div class="glass-card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fa-solid fa-sliders"></i> Generators</h3>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="network-scale-select">Environment Scale</label>
+                        <select id="network-scale-select">
+                            <option value="small">Small Network (50 nodes)</option>
+                            <option value="medium" selected>Medium Enterprise (250 nodes)</option>
+                            <option value="large">Large Enterprise (1000 nodes)</option>
+                            <option value="cloud-hybrid">Cloud-Hybrid VPC</option>
+                        </select>
+                    </div>
+                    
+                    <button class="cyber-btn" onclick="loadNetwork()"><i class="fa-solid fa-arrows-rotate"></i> Generate Topology</button>
+                    
+                    <div style="margin-top: 2rem;">
+                        <h4 style="font-size: 0.9rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.75rem;">Node Security Legend</h4>
+                        <div class="legend" style="display: flex; flex-direction: column; gap: 0.75rem; background: transparent; padding: 0;">
+                            <div class="legend-item"><div class="legend-color" style="background-color: #ff1744;"></div><span>Firewall / Security Gate</span></div>
+                            <div class="legend-item"><div class="legend-color" style="background-color: #708090;"></div><span>Core Gateway Router</span></div>
+                            <div class="legend-item"><div class="legend-color" style="background-color: #00e676;"></div><span>Database / High Value Assets</span></div>
+                            <div class="legend-item"><div class="legend-color" style="background-color: #e040fb;"></div><span>Active Directory (AD) Target</span></div>
+                            <div class="legend-item"><div class="legend-color" style="background-color: #4facfe;"></div><span>Web & Application Servers</span></div>
+                            <div class="legend-item"><div class="legend-color" style="background-color: #ffb300;"></div><span>Corporate Workspace Client</span></div>
+                            <div class="legend-item"><div class="legend-color" style="background-color: #555555;"></div><span>IoT Endpoint Node</span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card" style="padding: 0.75rem;">
+                    <div id="network-visualization">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: var(--text-muted); text-align: center;">
+                            <i class="fa-solid fa-spinner fa-spin fa-2x" style="margin-bottom: 1rem; color: var(--primary);"></i>
+                            <p>Compiling Graph Topology...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: TRAINING CENTER -->
+        <div id="training-tab" class="tab-content">
+            <div class="grid-layout-sidebar">
+                <div class="glass-card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fa-solid fa-gears"></i> Hyperparameters</h3>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="agent-select">Select RL Agent</label>
+                        <select id="agent-select">
+                            <option value="DQN">Deep Q-Network (DQN)</option>
+                            <option value="PPO">Proximal Policy Optimization (PPO)</option>
+                            <option value="A2C">Advantage Actor-Critic (A2C)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="train-scale-select">Train Network Scale</label>
+                        <select id="train-scale-select">
+                            <option value="small">Small Network (Fast convergence)</option>
+                            <option value="medium" selected>Medium Network (Recommended)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="episodes-input">Training Episodes</label>
+                        <input type="number" id="episodes-input" value="200" min="50" max="1000">
+                    </div>
+                    
+                    <button id="train-btn" class="cyber-btn" onclick="startTraining()"><i class="fa-solid fa-play"></i> Launch Training</button>
+                    
+                    <div id="training-progress" class="progress-container">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.5rem;">
+                            <span id="progress-text" class="badge info">Training...</span>
+                            <span id="progress-percent">0%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div id="progress-fill" class="progress-bar-fill"></div>
+                        </div>
+                        <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+                            <div style="display: flex; justify-content: space-between;"><span style="color: var(--text-muted);">Reward:</span><span id="live-reward">-</span></div>
+                            <div style="display: flex; justify-content: space-between;"><span style="color: var(--text-muted);">Coverage:</span><span id="live-coverage">-</span></div>
+                            <div style="display: flex; justify-content: space-between;"><span style="color: var(--text-muted);">Loss:</span><span id="live-loss">-</span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fa-solid fa-chart-line"></i> Convergence Monitoring</h3>
+                    </div>
+                    <div style="height: 480px; position: relative;">
+                        <canvas id="trainingChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: BENCHMARK ARENA -->
+        <div id="benchmark-tab" class="tab-content">
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <div class="glass-card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fa-solid fa-vial"></i> Comparative Evaluation</h3>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <select id="eval-scale-select" style="width: 200px; padding: 0.5rem 1rem;">
+                                <option value="small">Small Network</option>
+                                <option value="medium" selected>Medium Enterprise</option>
+                                <option value="large">Large Enterprise</option>
+                                <option value="cloud-hybrid">Cloud VPC</option>
+                            </select>
+                            <button id="eval-btn" class="cyber-btn" style="width: auto;" onclick="runEvaluation()"><i class="fa-solid fa-ranking-star"></i> Run Benchmark Suite</button>
+                        </div>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table id="benchmark-table">
+                            <thead>
+                                <tr>
+                                    <th>Strategy Agent</th>
+                                    <th>Discovery Coverage</th>
+                                    <th>Avg Search Steps</th>
+                                    <th>Cumulative Reward</th>
+                                    <th>Defending Detection Risk</th>
+                                    <th>Information Gain Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="benchmark-table-body">
+                                <tr>
+                                    <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 3rem;">No benchmark data loaded. Run the benchmark suite.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="glass-card">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fa-solid fa-sliders"></i> Risk vs Discovery Tradeoff Map</h3>
+                        </div>
+                        <div style="height: 400px; position: relative;">
+                            <canvas id="tradeoffChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fa-solid fa-chart-bar"></i> Performance Benchmark Profiling</h3>
+                        </div>
+                        <div style="height: 400px; position: relative;">
+                            <canvas id="barChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: MDP THEORY -->
+        <div id="theory-tab" class="tab-content">
+            <div class="glass-card" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div class="card-header">
+                    <h3 class="card-title"><i class="fa-solid fa-scroll"></i> Mathematical MDP Formulation</h3>
+                </div>
+                
+                <div>
+                    <p style="line-height: 1.6; margin-bottom: 1rem;">
+                        AIR-NDF models the network discovery process as a finite Markov Decision Process (MDP) represented by the tuple 
+                        <span style="font-family: monospace; color: var(--primary); font-weight: bold;">(S, A, P, R, &gamma;)</span>:
+                    </p>
+                    
+                    <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">1. Observation State Space (S &isin; R<sup>24</sup>)</h4>
+                    <p style="line-height: 1.6; margin-bottom: 0.5rem;">
+                        To allow feedforward neural networks (MLPs) to process dynamic graphs without computational overhead, the network state is encoded as a standardized 24-dimensional feature vector:
+                    </p>
+                    <ul class="list-bullets">
+                        <li><strong>Local Host Signatures (Index 0-4):</strong> Encodes current node ID, host classification, vulnerability score, detection risk, and reward.</li>
+                        <li><strong>Global Topology Discovery Stats (Index 5-8):</strong> Percentage of overall nodes discovered, percentage explored, cumulative risk, and step budget remaining.</li>
+                        <li><strong>Subnet & Cluster Frontiers (Index 9-16):</strong> Cardinality of adjacent unexplored nodes, active subnet exploration density, active NetworkX community cluster metrics.</li>
+                        <li><strong>Vulnerability & Reward Profiles (Index 17-23):</strong> Expected value (mean/max) of vulnerabilities and rewards within adjacent, subnet, and cluster candidate lists.</li>
+                    </ul>
+                    
+                    <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">2. Macro-Exploration Action Space (A)</h4>
+                    <p style="line-height: 1.6; margin-bottom: 0.5rem;">
+                        The agent selects from 5 high-level heuristic exploration policies:
+                    </p>
+                    <div class="math-block">
+                        Action = {<br>
+                        &nbsp;&nbsp;0: Explore Adjacent Node (local edge expansion),<br>
+                        &nbsp;&nbsp;1: Jump to Inferred Node (cross-subnet connection exploration),<br>
+                        &nbsp;&nbsp;2: Prioritize Subnet (intra-subnet scan),<br>
+                        &nbsp;&nbsp;3: Investigate Cluster (community/highly-connected mesh scan),<br>
+                        &nbsp;&nbsp;4: Terminate Discovery (safe exit strategy to avoid detection)<br>
+                        }
+                    </div>
+                    
+                    <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">3. Dynamic Reward Shaping Function (R)</h4>
+                    <p style="line-height: 1.6; margin-bottom: 0.5rem;">
+                        The agent's objective function balances information gain against discovery cost and detection penalty:
+                    </p>
+                    <div class="math-block">
+                        R = R<sub>discovery</sub>(vulnerability, value) - C<sub>step</sub> - C<sub>risk</sub>(detection_probability) - C<sub>redundant</sub>
+                    </div>
+                    <p style="line-height: 1.6;">
+                        If a simulated detection event is triggered based on the node's <span style="font-family: monospace; color: var(--warning);">detection_probability</span>, the episode terminates immediately with a significant penalty (<span style="font-family: monospace; color: var(--danger);">-300</span>).
+                        Self-termination (Action 4) rewards the agent with a bonus proportional to the remaining threat safety margin, incentivizing risk mitigation.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>AIR-NDF: AI-Reinforced Adaptive Network Discovery Framework &copy; 2026. Made with <i class="fa-solid fa-heart" style="color: var(--danger);"></i> for Cybersecurity & RL Research.</p>
+    </footer>
+
+    <!-- Frontend Logic -->
+    <script>
+        let visNetwork = null;
+        let trainingChart = null;
+        let tradeoffChart = null;
+        let barChart = null;
+        let trainingPollInterval = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initial load
+            loadNetwork();
+            initCharts();
+        });
+
+        // Tab Switching
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById(`${tabId}-tab`).classList.add('active');
+            
+            // Find active tab btn
+            const btn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.textContent.toLowerCase().includes(tabId));
+            if (btn) btn.classList.add('active');
+            
+            // Resize vis.js network if tab is topology
+            if (tabId === 'topology' && visNetwork) {
+                setTimeout(() => visNetwork.fit(), 200);
+            }
+        }
+
+        // 1. TOPOLOGY VIEWER LOGIC
+        async function loadNetwork() {
+            const scale = document.getElementById('network-scale-select').value;
+            const container = document.getElementById('network-visualization');
+            container.innerHTML = `
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: var(--text-muted); text-align: center;">
+                    <i class="fa-solid fa-spinner fa-spin fa-2x" style="margin-bottom: 1rem; color: var(--primary);"></i>
+                    <p>Compiling Graph Topology (${scale.toUpperCase()})...</p>
+                </div>`;
+            
+            try {
+                const response = await fetch(`/generate-network?scale=${scale}`);
+                if (!response.ok) throw new Error("Failed to load network");
+                const data = await response.json();
+                
+                // Color mapping for host types
+                const nodeColors = {
+                    "router": "#708090",
+                    "firewall": "#ff1744",
+                    "workstation": "#ffb300",
+                    "web_server": "#4facfe",
+                    "database_server": "#00e676",
+                    "active_directory": "#e040fb",
+                    "iot_device": "#555555",
+                    "cloud_storage": "#00f2fe",
+                    "cloud_vm": "#2979ff"
+                };
+
+                // Map nodes for vis.js
+                const visNodes = data.nodes.map(n => {
+                    const typeColor = nodeColors[n.host_type] || "#cccccc";
+                    return {
+                        id: n.id,
+                        label: n.host_type === "router" || n.host_type === "firewall" ? n.host_type.toUpperCase() : n.ip,
+                        title: `ID: ${n.id}\nType: ${n.host_type}\nSubnet: ${n.subnet}\nVuln Score: ${n.vulnerability_score}\nDet Probability: ${n.detection_probability}\nReward: ${n.discovery_reward}`,
+                        color: {
+                            background: typeColor,
+                            border: '#ffffff',
+                            highlight: { background: '#ffffff', border: typeColor }
+                        },
+                        shape: n.host_type === "router" || n.host_type === "firewall" ? 'box' : 'dot',
+                        size: n.host_type === "active_directory" || n.host_type === "database_server" ? 25 : 15,
+                        font: { color: '#ffffff', face: 'Space Grotesk', size: 12 }
+                    };
+                });
+
+                container.innerHTML = "";
+                const visData = {
+                    nodes: new vis.DataSet(visNodes),
+                    edges: new vis.DataSet(data.edges)
+                };
+
+                const options = {
+                    physics: {
+                        stabilization: true,
+                        barnesHut: {
+                            gravitationalConstant: -3000,
+                            centralGravity: 0.3,
+                            springLength: 95
+                        }
+                    },
+                    edges: {
+                        color: { color: 'rgba(255,255,255,0.15)' },
+                        width: 1.5
+                    },
+                    interaction: {
+                        hover: true,
+                        tooltipDelay: 100
+                    }
+                };
+
+                visNetwork = new vis.Network(container, visData, options);
+            } catch (error) {
+                container.innerHTML = `
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: var(--danger); text-align: center;">
+                        <i class="fa-solid fa-triangle-exclamation fa-2x" style="margin-bottom: 1rem;"></i>
+                        <p>Error compiling graph: ${error.message}</p>
+                    </div>`;
+            }
+        }
+
+        // 2. CHART SYSTEM INITIALIZATION
+        function initCharts() {
+            // Training Chart
+            const ctxTrain = document.getElementById('trainingChart').getContext('2d');
+            trainingChart = new Chart(ctxTrain, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [
+                        {
+                            label: 'Episode Reward',
+                            yAxisID: 'yReward',
+                            data: [],
+                            borderColor: '#00f2fe',
+                            backgroundColor: 'rgba(0, 242, 254, 0.05)',
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.3
+                        },
+                        {
+                            label: 'Discovery Coverage',
+                            yAxisID: 'yCoverage',
+                            data: [],
+                            borderColor: '#00e676',
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            fill: false,
+                            tension: 0.1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8e95af' } },
+                        yReward: {
+                            position: 'left',
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#00f2fe' },
+                            title: { display: true, text: 'Cumulative Reward', color: '#00f2fe' }
+                        },
+                        yCoverage: {
+                            position: 'right',
+                            grid: { drawOnChartArea: false },
+                            ticks: { color: '#00e676' },
+                            min: 0,
+                            max: 1,
+                            title: { display: true, text: 'Discovery Coverage (%)', color: '#00e676' }
+                        }
+                    },
+                    plugins: { legend: { labels: { color: '#f5f6f9' } } }
+                }
+            });
+
+            // Benchmark Tradeoff Chart
+            const ctxTradeoff = document.getElementById('tradeoffChart').getContext('2d');
+            tradeoffChart = new Chart(ctxTradeoff, {
+                type: 'scatter',
+                data: {
+                    datasets: []
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: { display: true, text: 'Detection Probability (Risk)', color: '#f5f6f9' },
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#8e95af' },
+                            min: -0.05,
+                            max: 1.05
+                        },
+                        y: {
+                            title: { display: true, text: 'Discovery Coverage (Mapped %)', color: '#f5f6f9' },
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#8e95af' },
+                            min: -0.05,
+                            max: 1.05
+                        }
+                    },
+                    plugins: {
+                        legend: { labels: { color: '#f5f6f9' } },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.dataset.label}: (Risk: ${context.raw.x.toFixed(2)}, Cov: ${context.raw.y.toFixed(2)})`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Bar Chart
+            const ctxBar = document.getElementById('barChart').getContext('2d');
+            barChart = new Chart(ctxBar, {
+                type: 'bar',
+                data: {
+                    labels: [],
+                    datasets: [
+                        {
+                            label: 'Coverage (%)',
+                            data: [],
+                            backgroundColor: '#4facfe',
+                            borderColor: '#00f2fe',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Avg Steps',
+                            data: [],
+                            backgroundColor: '#ffb300',
+                            borderColor: '#ffeb3b',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8e95af' } },
+                        y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8e95af' } }
+                    },
+                    plugins: { legend: { labels: { color: '#f5f6f9' } } }
+                }
+            });
+        }
+
+        // 3. TRAINING AGENT ACTIONS
+        async function startTraining() {
+            const agent = document.getElementById('agent-select').value;
+            const scale = document.getElementById('train-scale-select').value;
+            const episodes = document.getElementById('episodes-input').value;
+            const trainBtn = document.getElementById('train-btn');
+            
+            trainBtn.disabled = true;
+            trainBtn.innerHTML = `<span class="spinner"></span> Preparing Agent...`;
+            
+            document.getElementById('training-progress').style.display = 'block';
+            
+            try {
+                const response = await fetch(`/train?agent=${agent}&scale=${scale}&episodes=${episodes}`, { method: 'POST' });
+                const resData = await response.json();
+                
+                if (resData.status === "error") {
+                    alert(resData.message);
+                    resetTrainBtn();
+                    return;
+                }
+                
+                // Clear charts
+                trainingChart.data.labels = [];
+                trainingChart.data.datasets[0].data = [];
+                trainingChart.data.datasets[1].data = [];
+                trainingChart.update();
+                
+                // Poll status
+                trainingPollInterval = setInterval(pollTrainingStatus, 1000);
+            } catch (error) {
+                alert("Training start failed: " + error.message);
+                resetTrainBtn();
+            }
+        }
+
+        function resetTrainBtn() {
+            const trainBtn = document.getElementById('train-btn');
+            trainBtn.disabled = false;
+            trainBtn.innerHTML = `<i class="fa-solid fa-play"></i> Launch Training`;
+        }
+
+        async function pollTrainingStatus() {
+            try {
+                const response = await fetch('/train-status');
+                const data = await response.json();
+                
+                if (!data.is_running && data.current_episode === data.total_episodes && data.total_episodes > 0) {
+                    clearInterval(trainingPollInterval);
+                    document.getElementById('progress-text').className = 'badge success';
+                    document.getElementById('progress-text').textContent = 'Completed';
+                    document.getElementById('progress-percent').textContent = '100%';
+                    document.getElementById('progress-fill').style.width = '100%';
+                    resetTrainBtn();
+                    return;
+                }
+                
+                if (!data.is_running && data.status_message.startsWith("Error")) {
+                    clearInterval(trainingPollInterval);
+                    document.getElementById('progress-text').className = 'badge danger';
+                    document.getElementById('progress-text').textContent = 'Failed';
+                    alert(data.status_message);
+                    resetTrainBtn();
+                    return;
+                }
+
+                // Update Progress bar
+                const percent = Math.round((data.current_episode / data.total_episodes) * 100) || 0;
+                document.getElementById('progress-percent').textContent = `${percent}%`;
+                document.getElementById('progress-fill').style.width = `${percent}%`;
+                document.getElementById('progress-text').textContent = `Episode ${data.current_episode}/${data.total_episodes}`;
+                
+                // Live numeric displays
+                document.getElementById('live-reward').textContent = data.last_reward.toFixed(2);
+                document.getElementById('live-coverage').textContent = `${(data.last_coverage * 100).toFixed(1)}%`;
+                document.getElementById('live-loss').textContent = data.last_loss.toFixed(4);
+
+                // Update line plots
+                if (data.rewards.length > trainingChart.data.labels.length) {
+                    const newLabels = Array.from({length: data.rewards.length}, (_, i) => i + 1);
+                    trainingChart.data.labels = newLabels;
+                    trainingChart.data.datasets[0].data = data.rewards;
+                    trainingChart.data.datasets[1].data = data.coverages;
+                    trainingChart.update();
+                }
+            } catch (error) {
+                console.error("Polling training status error: ", error);
+            }
+        }
+
+        // 4. BENCHMARKING ACTIONS
+        async function runEvaluation() {
+            const scale = document.getElementById('eval-scale-select').value;
+            const evalBtn = document.getElementById('eval-btn');
+            
+            evalBtn.disabled = true;
+            evalBtn.innerHTML = `<span class="spinner"></span> Running Simulation Benchmark...`;
+            
+            try {
+                const response = await fetch(`/evaluate?scale=${scale}&episodes=30`, { method: 'POST' });
+                if (!response.ok) throw new Error("Evaluation run failed");
+                const data = await response.json();
+                
+                // Populate Table
+                const tbody = document.getElementById('benchmark-table-body');
+                tbody.innerHTML = "";
+                
+                const labels = [];
+                const coverages = [];
+                const steps = [];
+                const tradeoffDatasets = [];
+                
+                // Colors for scatter plot points
+                const agentColors = {
+                    "Random": "#9e9e9e",
+                    "BFS": "#2196f3",
+                    "DFS": "#4caf50",
+                    "Greedy": "#ff9800",
+                    "DQN": "#e91e63",
+                    "PPO": "#00bcd4",
+                    "A2C": "#9c27b0"
+                };
+
+                data.forEach(row => {
+                    const tr = document.createElement('tr');
+                    
+                    const isRL = ["DQN", "PPO", "A2C"].includes(row.agent);
+                    const agentBadge = isRL ? `<span class="badge info">${row.agent}</span>` : `<span class="badge warning">${row.agent}</span>`;
+                    
+                    tr.innerHTML = `
+                        <td><strong>${agentBadge}</strong></td>
+                        <td>${(row.avg_coverage * 100).toFixed(1)}%</td>
+                        <td>${row.avg_steps.toFixed(1)}</td>
+                        <td style="color:${row.avg_reward >= 0 ? 'var(--success)' : 'var(--danger)'}">${row.avg_reward.toFixed(1)}</td>
+                        <td>${(row.detection_rate * 100).toFixed(1)}%</td>
+                        <td>${row.avg_info_gain.toFixed(1)}</td>
+                    `;
+                    tbody.appendChild(tr);
+                    
+                    // Arrays for charts
+                    labels.push(row.agent);
+                    coverages.push(row.avg_coverage * 100);
+                    steps.push(row.avg_steps);
+                    
+                    tradeoffDatasets.push({
+                        label: row.agent,
+                        data: [{ x: row.detection_rate, y: row.avg_coverage }],
+                        backgroundColor: agentColors[row.agent] || "#ffffff",
+                        pointRadius: 10,
+                        pointHoverRadius: 12
+                    });
+                });
+                
+                // Update Bar chart
+                barChart.data.labels = labels;
+                barChart.data.datasets[0].data = coverages;
+                barChart.data.datasets[1].data = steps;
+                barChart.update();
+                
+                // Update Scatter/Tradeoff chart
+                tradeoffChart.data.datasets = tradeoffDatasets;
+                tradeoffChart.update();
+                
+            } catch (error) {
+                alert("Benchmarking failed: " + error.message);
+            } finally {
+                evalBtn.disabled = false;
+                evalBtn.innerHTML = `<i class="fa-solid fa-ranking-star"></i> Run Benchmark Suite`;
+            }
+        }
+    </script>
+</body>
+</html>
